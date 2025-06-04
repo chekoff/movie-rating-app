@@ -13,7 +13,7 @@ tasks:
     command: |
       cd frontend
       npm install
-      npm start
+      npm run dev
 
 ports:
   - port: 5000
