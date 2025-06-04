@@ -1,0 +1,22 @@
+image: gitpod/workspace-full
+
+tasks:
+  - name: Setup Backend
+    command: |
+      cd backend
+      python3 -m venv venv
+      source venv/bin/activate
+      pip install flask flask-cors
+      python init_db.py
+      python app.py
+  - name: Setup Frontend
+    command: |
+      cd frontend
+      npm install
+      npm start
+
+ports:
+  - port: 5000
+    onOpen: open-preview
+  - port: 3000
+    onOpen: open-preview
